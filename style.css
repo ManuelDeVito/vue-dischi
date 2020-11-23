@@ -1,0 +1,53 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contenitore-cd {
+    width: 1050px;
+    height: 650px;
+    background-color: lightgreen;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+
+}
+
+.cd {
+    width: 200px;
+    height: 300px;
+    background-color: lightblue;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 3px;
+
+}
+
+.cd h3 {
+    margin: 10px 0;
+}
+
+.cd .author {
+    margin: 10px 0;
+}
+
+.cd .year {
+    margin: 15px 0;
+}
+
+.cd img {
+    max-width: 150px;
+    margin-top: 20px;
+}

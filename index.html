@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="style.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.20.0/axios.min.js" charset="utf-8"></script>
+        <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+        <title>Dischi</title>
+    </head>
+    <body>
+
+        <div id="root">
+            <div class="contenitore-cd">
+                <div class="cd" v-for= "disco_album in dischi">
+                    <img :src="disco_album.poster" :alt="disco_album.title">
+                    <h3>{{ disco_album.title }}</h3>
+                    <span class="author">{{ disco_album.author }}</span>
+                    <span class="year">{{ disco_album.year }}</span>
+                </div>
+            </div>
+
+        </div>
+
+
+
+        <script src="main.js" charset="utf-8"></script>
+    </body>
+</html>
