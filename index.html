@@ -3,22 +3,31 @@
     <head>
         <meta charset="utf-8">
         <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
         <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.20.0/axios.min.js" charset="utf-8"></script>
         <script src="https://cdn.jsdelivr.net/npm/vue"></script>
-        <title>Dischi</title>
+        <title>Dischi Musicali</title>
     </head>
     <body>
 
         <div id="root">
+            <h1>Album Artisti</h1>
+            <div class="contenitore_input">
+                <select class="selezione_genere" v-model="seleziona_genere">
+                    <i class="fas fa-angle-down"></i>
+                    <option value="Tutti i generi">Tutti i generi</option>
+                    <option :value="genre" v-for="genre in generi">{{ genre }}</option>
+                </select>
+            </div>
             <div class="contenitore-cd">
-                <div class="cd" v-for= "disco_album in dischi">
+                <div class="cd" v-for= "disco_album in dischi"
+                v-if="seleziona_genere == disco_album.genre || seleziona_genere == 'Tutti i generi'">
                     <img :src="disco_album.poster" :alt="disco_album.title">
                     <h3>{{ disco_album.title }}</h3>
                     <span class="author">{{ disco_album.author }}</span>
                     <span class="year">{{ disco_album.year }}</span>
                 </div>
             </div>
-
         </div>
 
 

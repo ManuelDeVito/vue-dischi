@@ -11,20 +11,38 @@ var app = new Vue ({
 
     data: {
 
-        dischi: []
+        dischi: [],
+        generi: [],
+        seleziona_genere: 'Tutti i generi'
+
+    },
+
+    methods: {
+
+
 
 
     },
 
     mounted() {
         axios.get('https://flynn.boolean.careers/exercises/api/array/music')
-        .then((risposta)=> {
+        .then((risposta) => {
 
             this.dischi = risposta.data.response;
 
             console.log(this.dischi);
 
+            this.dischi.forEach((disco_album, i) => {
+
+                if (!this.generi.includes(disco_album.genre)) {
+
+                    this.generi.push(disco_album.genre);
+                }
+
+            });
+            console.log(this.generi);
         });
+
     }
 
 });
