@@ -3,7 +3,6 @@
     <head>
         <meta charset="utf-8">
         <link rel="stylesheet" href="style.css">
-        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
         <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.20.0/axios.min.js" charset="utf-8"></script>
         <script src="https://cdn.jsdelivr.net/npm/vue"></script>
         <title>Dischi Musicali</title>
@@ -14,7 +13,6 @@
             <h1>Album Artisti</h1>
             <div class="contenitore_input">
                 <select class="selezione_genere" v-model="seleziona_genere">
-                    <i class="fas fa-angle-down"></i>
                     <option value="Tutti i generi">Tutti i generi</option>
                     <option :value="genre" v-for="genre in generi">{{ genre }}</option>
                 </select>
@@ -29,9 +27,6 @@
                 </div>
             </div>
         </div>
-
-
-
         <script src="main.js" charset="utf-8"></script>
     </body>
 </html>

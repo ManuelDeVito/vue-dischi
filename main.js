@@ -30,8 +30,6 @@ var app = new Vue ({
 
             this.dischi = risposta.data.response;
 
-            console.log(this.dischi);
-
             this.dischi.forEach((disco_album, i) => {
 
                 if (!this.generi.includes(disco_album.genre)) {
@@ -40,7 +38,12 @@ var app = new Vue ({
                 }
 
             });
-            console.log(this.generi);
+
+            this.dischi.sort(function(disco1, disco2) {
+
+                return parseInt(disco1.year) - (disco2.year)
+            });
+
         });
 
     }
